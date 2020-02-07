@@ -1,0 +1,97 @@
+.panel {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 2% auto;
+}
+
+.panel__thumbnails {
+  object-fit: cover;
+  cursor: pointer;
+  margin: 0 5px;
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+}
+
+.panel__thumbnails:hover,
+.panel__thumbnails.active {
+  box-shadow: 0 0 10px 0px black;
+}
+
+.carousel {
+  position: relative;
+  left: 30vw;
+  /* left:15vw; */
+  height: 70vh;
+  width: 40vw;
+  /* width:70vw */
+}
+
+.carousel__slide {
+  display: flex;
+  height: 100%;
+  position: absolute;
+
+  transition-property: transform;
+  transition-duration: 500ms;
+  transition-timing-function: cubic-bezier(
+    0.43,
+    0.06,
+    0.66,
+    0.99
+  ); /*easing   /* slow fast slow */
+}
+
+.carousel__img {
+  height: 100%;
+  width: 40vw;
+  object-fit: cover;
+
+  transition: opacity 500ms,
+    transform 500ms cubic-bezier(0.43, 0.06, 0.66, 0.99);
+  opacity: 0.5;
+  transform: scale(0.7);
+}
+
+.carousel__img.active {
+  opacity: 1;
+  transform: scale(1);
+}
+
+button {
+  border: none;
+  outline: none;
+  font-size: 1rem;
+  cursor: pointer;
+  background-color: rgb(255, 255, 255, 0);
+  width: 10%;
+}
+
+.button__arrow {
+  color: rgb(255, 224, 157);
+}
+
+.button__arrow:hover {
+  color: orange;
+}
+
+.button__hide {
+  visibility: hidden;
+}
+
+@media only screen and (max-width: 600px) {
+  .carousel {
+    left: 20vw;
+    width: 60vw;
+  }
+  .carousel__img {
+    width: 60vw;
+  }
+
+  .panel__thumbnails {
+    margin: auto 1.5px;
+    width: 24px;
+    height: 24px;
+  }
+}
