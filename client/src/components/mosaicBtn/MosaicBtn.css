@@ -1,0 +1,95 @@
+.mosaic__btn-wrapper {
+  display: flex;
+  flex-direction: column;
+  position: absolute; /*relative to .mosaic*/
+  left: 100%;
+  transform: translate(-50%, -50%);
+  z-index: 2;
+}
+
+.mosaic__btn {
+  background-color: rgb(192, 207, 195);
+  color: rgb(75, 85, 79);
+  font-family: "DejaVu Sans Mono", Arial, Helvetica, sans-serif;
+  font-size: 1.5rem;
+  width: 3rem;
+  height: 3rem;
+}
+
+.mosaic__btn.close {
+  background-color: rgb(75, 85, 79);
+  color: rgb(192, 207, 195);
+  animation: btn-pop-in 250ms both; /*can use both or backwards*/
+  animation-delay: 500ms; /*after the picture pop out*/
+  position: relative;
+  z-index: 5;
+}
+.mosaic__btn.left {
+  position: absolute;
+  animation: btn-pop-in 1ms backwards, slide-down-1 500ms forwards;
+  animation-delay: 750ms; /*after the close btn pop out*/
+  z-index: 4;
+}
+
+.mosaic__btn.right {
+  position: absolute;
+  animation: btn-pop-in 1ms backwards, slide-down-2 1000ms forwards;
+  animation-delay: 1000ms; /*after the left btn slide down */
+  z-index: 3;
+}
+
+@keyframes slide-down-1 {
+  0% {
+    transform: translateY(0%);
+  }
+
+  100% {
+    transform: translateY(105%);
+  }
+}
+
+@keyframes slide-down-2 {
+  0% {
+    transform: translateY(0%);
+  }
+
+  100% {
+    transform: translateY(210%);
+  }
+}
+
+@keyframes btn-pop-in {
+  0% {
+    transform: scale(0);
+  }
+
+  100% {
+    transform: scale(1);
+  }
+}
+
+/**************************** NOTE : animation-fill-mode ********************************
+
+  animation-fill-mode: none|forwards|backwards|both|initial|inherit;
+    to control the element outside the time frame
+
+  none   default, element will stay at initial state before and after the animation finish
+  forwards	The element will retain the style values that is set by the last keyframe (depends on animation-direction and animation-iteration-count)
+  backwards	The element will get the style values that is set by the first keyframe (depends on animation-direction), and retain this during the animation-delay period
+  both  
+  */
+
+/*********************************   animation shorthand**********************************
+  div {
+    animation-name: example;
+    animation-duration: 5s;
+    animation-timing-function: linear;
+    animation-delay: 2s;
+    animation-iteration-count: infinite;
+    animation-direction: alternate;
+  }
+
+  div {
+    animation: example 5s linear 2s infinite alternate;
+  }
+*/
