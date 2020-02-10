@@ -12,7 +12,6 @@ const Carousel = props => {
   }
 
   let { photoData, activeImgIndex } = props;
-  activeImgIndex = parseInt(activeImgIndex, 10);
 
   let isFirstImg;
   let isLastImg;
