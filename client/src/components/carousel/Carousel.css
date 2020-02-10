@@ -69,6 +69,8 @@
 
 .button__hide {
   visibility: hidden;
+  font-size: 1.3rem;
+  padding: 5px 10px 7px;
 }
 
 @media only screen and (max-width: 600px) {
