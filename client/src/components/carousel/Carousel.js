@@ -28,7 +28,7 @@ const Carousel = props => {
       <img
         key={el.id}
         src={el.urls.small}
-        alt={el.alt_description}
+        alt={`${el.alt_description}_thumbnails`}
         className={`panel__thumbnails ${
           index === activeImgIndex ? `active` : ""
         }`}
@@ -41,7 +41,6 @@ const Carousel = props => {
     return (
       <img
         key={index}
-        data-testid="display-img"
         className={`carousel__img ${index === activeImgIndex ? `active` : ""}`}
         src={el.urls.regular}
         alt={el.alt_description}
