@@ -26,6 +26,7 @@ const Carousel = props => {
   const indicators = [...props.photoData].map((el, index) => {
     return (
       <img
+        key={el.id}
         src={el.urls.small}
         alt={el.alt_description}
         className={`panel__thumbnails ${
