@@ -1,8 +1,13 @@
 import React from "react";
 import "./Mosaic.css";
 import MosaicBtn from "../mosaicBtn/MosaicBtn";
+import ErrorMsg from "../errorMsg/ErrorMsg";
 
 const Mosaic = props => {
+  if (props.err) {
+    return <ErrorMsg />;
+  }
+
   if (!props.photoData) {
     return <></>;
   }
