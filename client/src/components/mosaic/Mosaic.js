@@ -35,6 +35,7 @@ const Mosaic = props => {
         {photoGrid}
         {isPopUp ? (
           <MosaicBtn
+            photoData={photoData}
             activeImgIndex={props.activeImgIndex}
             handlePhotoChange={props.handlePhotoChange}
             isPopUp={props.isPopUp}

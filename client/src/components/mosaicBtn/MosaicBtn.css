@@ -38,6 +38,12 @@
   z-index: 3;
 }
 
+.disabled {
+  background-color: rgb(231, 231, 231);
+  color: rgb(177, 174, 174);
+  cursor: default;
+}
+
 @keyframes slide-down-1 {
   0% {
     transform: translateY(0%);
