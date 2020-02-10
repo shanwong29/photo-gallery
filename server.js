@@ -6,9 +6,9 @@ const port = 5005;
 
 const ACCESS_KEY = process.env.UNSPLASH_ACCESS_KEY;
 
-const query = "Hong Kong street view";
+const query = "girl";
 const numOfPhoto = 12;
-const orientation = "portrait";
+const orientation = "landscape";
 
 app.get("/api/photos", async (req, res) => {
   try {
