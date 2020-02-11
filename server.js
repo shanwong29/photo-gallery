@@ -12,9 +12,10 @@ const numOfPhoto = 12;
 const orientation = "landscape";
 
 app.get("/api/photos", async (req, res) => {
+  const randomNum = Math.floor(Math.random() * 3) + 1;
   try {
     let response = await axios.get(
-      `https://api.unsplash.com/search/photos/?client_id=${ACCESS_KEY}&page=1&query=${query}&per_page=${numOfPhoto}&orientation=${orientation}`
+      `https://api.unsplash.com/search/photos/?client_id=${ACCESS_KEY}&page=${randomNum}&query=${query}&per_page=${numOfPhoto}&orientation=${orientation}`
     );
     res.json(response.data);
   } catch (err) {
