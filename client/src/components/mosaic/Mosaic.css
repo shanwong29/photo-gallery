@@ -1,11 +1,11 @@
 .mosaic {
   display: grid;
   align-self: center;
+  justify-self: center;
   grid-template-columns: repeat(8, 1fr);
   grid-template-rows: repeat(6, 1fr); /*1fr = fill up all the available space*/
   grid-gap: 10px;
-  justify-content: center;
-  align-content: center;
+
   width: 80vw;
   height: 80vh;
   position: relative; /*for .mosaic__btn-wrapper*/
@@ -71,14 +71,14 @@
 /****************************************************************************************/
 /******************** to control fadeIn delay of the mosaic__items *********************/
 
-.mosaic__items.mosaic__items-2,
-.mosaic__items.mosaic__items-6 {
+.mosaic__items-2,
+.mosaic__items-6 {
   animation-delay: 200ms;
 }
 
-.mosaic__items.mosaic__items-3,
-.mosaic__items.mosaic__items-8,
-.mosaic__items.mosaic__items-10 {
+.mosaic__items-3,
+.mosaic__items-8,
+.mosaic__items-10 {
   animation-delay: 400ms;
 }
 
