@@ -48,7 +48,7 @@ const Carousel = props => {
   });
 
   return (
-    <div>
+    <>
       <div className="panel">
         <button
           data-testid="previous-img-button"
@@ -78,7 +78,7 @@ const Carousel = props => {
           {imgRow}
         </div>
       </div>
-    </div>
+    </>
   );
 };
 
