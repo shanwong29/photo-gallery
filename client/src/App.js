@@ -2,6 +2,7 @@ import React from "react";
 import "./App.css";
 import Carousel from "./components/carousel/Carousel";
 import Mosaic from "./components/mosaic/Mosaic";
+import Navbar from "./components/navbar/Navbar";
 import getPhotoData from "./service/getPhotoData";
 
 class App extends React.Component {
@@ -61,24 +62,10 @@ class App extends React.Component {
   render() {
     return (
       <div className="App">
-        <div className="nav">
-          <button
-            className={`nav__modeBtn ${
-              this.state.mode === "mosaic" ? "active" : ""
-            }`}
-            onClick={() => this.handleModeChange("mosaic")}
-          >
-            mosaic
-          </button>
-          <button
-            className={`nav__modeBtn ${
-              this.state.mode === "carousel" ? "active" : ""
-            }`}
-            onClick={() => this.handleModeChange("carousel")}
-          >
-            carousel
-          </button>
-        </div>
+        <Navbar
+          mode={this.state.mode}
+          handleModeChange={this.handleModeChange}
+        />
 
         {this.state.mode === "mosaic" && (
           <Mosaic

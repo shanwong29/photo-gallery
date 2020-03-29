@@ -6,19 +6,3 @@
   flex-direction: column;
   overflow: hidden;
 }
-
-.nav {
-  display: flex;
-  align-items: center;
-  height: 10vh;
-}
-
-.nav__modeBtn {
-  color: grey;
-  margin: 0 2%;
-}
-
-.nav__modeBtn:hover,
-.nav__modeBtn.active {
-  color: black;
-}
