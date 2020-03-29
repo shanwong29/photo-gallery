@@ -7,7 +7,7 @@ const Carousel = props => {
     return <ErrorMsg />;
   }
 
-  if (!props.photoData) {
+  if (!props.photoData.length) {
     return <></>;
   }
 
