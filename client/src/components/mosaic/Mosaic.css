@@ -25,7 +25,7 @@
   transition: all 200ms;
 }
 
-.mosaic__items.active {
+.mosaic__items.enlarged {
   width: 80vw;
   height: 80vh;
   z-index: 1;

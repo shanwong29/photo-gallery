@@ -21,7 +21,7 @@ const Mosaic = props => {
       <div
         key={el.id}
         className={`mosaic__items mosaic__items-${index + 1} ${
-          index === activeImgIndex && isPopUp ? `active` : ``
+          index === activeImgIndex && isPopUp ? `enlarged` : ``
         }`}
         style={{ backgroundImage: `url(${imgUrl})` }}
         onClick={() => props.handlePhotoChange(index)}
