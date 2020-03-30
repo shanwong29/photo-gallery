@@ -1,4 +1,4 @@
-.mosaic__btn-wrapper {
+.PopUpControlPanel {
   display: flex;
   flex-direction: column;
   position: absolute; /*relative to .mosaic*/
@@ -7,7 +7,7 @@
   z-index: 2;
 }
 
-.mosaic__btn {
+.PopUpControlPanel__btn {
   background-color: rgb(192, 207, 195);
   color: rgb(75, 85, 79);
   font-family: "DejaVu Sans Mono", Arial, Helvetica, sans-serif;
@@ -16,7 +16,7 @@
   height: 3rem;
 }
 
-.mosaic__btn.close {
+.PopUpControlPanel__btn.close {
   background-color: rgb(75, 85, 79);
   color: rgb(192, 207, 195);
   animation: btn-pop-in 250ms both; /*can use both or backwards*/
@@ -24,21 +24,21 @@
   position: relative;
   z-index: 5;
 }
-.mosaic__btn.left {
+.PopUpControlPanel__btn.left {
   position: absolute;
   animation: btn-pop-in 1ms backwards, slide-down-1 500ms forwards;
   animation-delay: 750ms; /*after the close btn pop out*/
   z-index: 4;
 }
 
-.mosaic__btn.right {
+.PopUpControlPanel__btn.right {
   position: absolute;
   animation: btn-pop-in 1ms backwards, slide-down-2 1000ms forwards;
   animation-delay: 1000ms; /*after the left btn slide down */
   z-index: 3;
 }
 
-.disabled {
+.PopUpControlPanel__btn.disabled {
   background-color: rgb(231, 231, 231);
   color: rgb(177, 174, 174);
   cursor: default;

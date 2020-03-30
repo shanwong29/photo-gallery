@@ -1,7 +1,7 @@
 import React from "react";
-import "./MosaicBtn.css";
+import "./PopUpControlPanel.css";
 
-const MosaicBtn = props => {
+const PopUpControlPanel = props => {
   const { activeImgIndex, photoData } = props;
 
   let isFirstImg;
@@ -14,19 +14,26 @@ const MosaicBtn = props => {
   }
 
   return (
-    <div className="mosaic__btn-wrapper">
-      <button className="mosaic__btn close" onClick={props.closePopUp}>
+    <div className="PopUpControlPanel">
+      <button
+        className="PopUpControlPanel__btn close"
+        onClick={props.closePopUp}
+      >
         &#10005;
       </button>
       <button
-        className={`mosaic__btn left ${isFirstImg ? "disabled" : ""}`}
+        className={`PopUpControlPanel__btn left ${
+          isFirstImg ? "disabled" : ""
+        }`}
         disabled={isFirstImg}
         onClick={() => props.handlePhotoChange(activeImgIndex - 1)}
       >
         &#8592;
       </button>
       <button
-        className={`mosaic__btn right ${isLastImg ? "disabled" : ""}`}
+        className={`PopUpControlPanel__btn right ${
+          isLastImg ? "disabled" : ""
+        }`}
         disabled={isLastImg}
         onClick={() => props.handlePhotoChange(activeImgIndex + 1)}
       >
@@ -36,4 +43,4 @@ const MosaicBtn = props => {
   );
 };
 
-export default MosaicBtn;
+export default PopUpControlPanel;

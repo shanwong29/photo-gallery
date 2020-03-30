@@ -1,6 +1,6 @@
 import React from "react";
 import "./Mosaic.css";
-import MosaicBtn from "../mosaicBtn/MosaicBtn";
+import PopUpControlPanel from "../popUpControlPanel/PopUpControlPanel";
 import ErrorMsg from "../errorMsg/ErrorMsg";
 
 const Mosaic = props => {
@@ -34,7 +34,7 @@ const Mosaic = props => {
       <div className="mosaic">
         {photoGrid}
         {isPopUp ? (
-          <MosaicBtn
+          <PopUpControlPanel
             photoData={photoData}
             activeImgIndex={props.activeImgIndex}
             handlePhotoChange={props.handlePhotoChange}
