@@ -1,16 +1,18 @@
 import React from "react";
 import "./App.css";
+import Navbar from "./components/navbar/Navbar";
 import Carousel from "./components/carousel/Carousel";
 import Mosaic from "./components/mosaic/Mosaic";
-import Navbar from "./components/navbar/Navbar";
+
 import getPhotoData from "./service/getPhotoData";
 
 class App extends React.Component {
   state = {
-    photoData: "",
+    photoData: [], // can't be null
     activeImgIndex: 0,
     mode: "mosaic",
-    isPopUp: false
+    isPopUp: false,
+    err: ""
   };
 
   componentDidMount() {
