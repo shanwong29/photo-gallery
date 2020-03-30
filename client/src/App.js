@@ -3,7 +3,6 @@ import "./App.css";
 import Navbar from "./components/navbar/Navbar";
 import Carousel from "./components/carousel/Carousel";
 import Mosaic from "./components/mosaic/Mosaic";
-
 import getPhotoData from "./service/getPhotoData";
 
 class App extends React.Component {
@@ -71,20 +70,20 @@ class App extends React.Component {
 
         {this.state.mode === "mosaic" && (
           <Mosaic
+            err={this.state.err}
             photoData={this.state.photoData}
             activeImgIndex={this.state.activeImgIndex}
             handlePhotoChange={this.handlePhotoChange}
-            err={this.state.err}
             isPopUp={this.state.isPopUp}
             closePopUp={this.closePopUp}
           />
         )}
         {this.state.mode === "carousel" && (
           <Carousel
+            err={this.state.err}
             photoData={this.state.photoData}
             activeImgIndex={this.state.activeImgIndex}
             handlePhotoChange={this.handlePhotoChange}
-            err={this.state.err}
           />
         )}
       </div>

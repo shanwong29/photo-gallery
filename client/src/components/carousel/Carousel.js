@@ -2,16 +2,14 @@ import React from "react";
 import ErrorMsg from "../errorMsg/ErrorMsg";
 import "./Carousel.css";
 
-const Carousel = props => {
-  if (props.err) {
+const Carousel = ({ err, photoData, activeImgIndex, handlePhotoChange }) => {
+  if (err) {
     return <ErrorMsg />;
   }
 
-  if (!props.photoData.length) {
+  if (!photoData.length) {
     return <></>;
   }
-
-  let { photoData, activeImgIndex } = props;
 
   let isFirstImg;
   let isLastImg;
@@ -22,7 +20,7 @@ const Carousel = props => {
     isLastImg = true;
   }
 
-  const indicators = [...props.photoData].map((el, index) => {
+  const indicators = [...photoData].map((el, index) => {
     return (
       <img
         key={el.id}
@@ -31,12 +29,12 @@ const Carousel = props => {
         className={`panel__thumbnails ${
           index === activeImgIndex ? `active` : ""
         }`}
-        onClick={() => props.handlePhotoChange(index)}
+        onClick={() => handlePhotoChange(index)}
       />
     );
   });
 
-  let imgRow = [...props.photoData].map((el, index) => {
+  let imgRow = [...photoData].map((el, index) => {
     return (
       <img
         key={index}
@@ -53,7 +51,7 @@ const Carousel = props => {
         <button
           data-testid="previous-img-button"
           className={`${isFirstImg ? "button__hide" : "button__arrow "}`}
-          onClick={() => props.handlePhotoChange(activeImgIndex - 1)}
+          onClick={() => handlePhotoChange(activeImgIndex - 1)}
         >
           &#9664;
         </button>
@@ -61,7 +59,7 @@ const Carousel = props => {
         <button
           data-testid="next-img-button"
           className={`${isLastImg ? "button__hide" : "button__arrow"}`}
-          onClick={() => props.handlePhotoChange(activeImgIndex + 1)}
+          onClick={() => handlePhotoChange(activeImgIndex + 1)}
         >
           &#9654;
         </button>

@@ -3,16 +3,21 @@ import "./Mosaic.css";
 import PopUpControlPanel from "../popUpControlPanel/PopUpControlPanel";
 import ErrorMsg from "../errorMsg/ErrorMsg";
 
-const Mosaic = props => {
-  if (props.err) {
+const Mosaic = ({
+  err,
+  photoData,
+  activeImgIndex,
+  handlePhotoChange,
+  isPopUp,
+  closePopUp
+}) => {
+  if (err) {
     return <ErrorMsg />;
   }
 
-  if (!props.photoData.length) {
+  if (!photoData.length) {
     return <></>;
   }
-
-  const { photoData, activeImgIndex, isPopUp } = props;
 
   let photoGrid = [...photoData].map((el, index) => {
     let imgUrl = el.urls.regular;
@@ -24,7 +29,7 @@ const Mosaic = props => {
           index === activeImgIndex && isPopUp ? `enlarged` : ``
         }`}
         style={{ backgroundImage: `url(${imgUrl})` }}
-        onClick={() => props.handlePhotoChange(index)}
+        onClick={() => handlePhotoChange(index)}
       ></div>
     );
   });
@@ -36,10 +41,9 @@ const Mosaic = props => {
         {isPopUp ? (
           <PopUpControlPanel
             photoData={photoData}
-            activeImgIndex={props.activeImgIndex}
-            handlePhotoChange={props.handlePhotoChange}
-            isPopUp={props.isPopUp}
-            closePopUp={props.closePopUp}
+            activeImgIndex={activeImgIndex}
+            handlePhotoChange={handlePhotoChange}
+            closePopUp={closePopUp}
           />
         ) : (
           ""

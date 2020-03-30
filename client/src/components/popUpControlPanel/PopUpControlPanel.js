@@ -1,9 +1,12 @@
 import React from "react";
 import "./PopUpControlPanel.css";
 
-const PopUpControlPanel = props => {
-  const { activeImgIndex, photoData } = props;
-
+const PopUpControlPanel = ({
+  photoData,
+  activeImgIndex,
+  handlePhotoChange,
+  closePopUp
+}) => {
   let isFirstImg;
   let isLastImg;
 
@@ -15,10 +18,7 @@ const PopUpControlPanel = props => {
 
   return (
     <div className="PopUpControlPanel">
-      <button
-        className="PopUpControlPanel__btn close"
-        onClick={props.closePopUp}
-      >
+      <button className="PopUpControlPanel__btn close" onClick={closePopUp}>
         &#10005;
       </button>
       <button
@@ -26,7 +26,7 @@ const PopUpControlPanel = props => {
           isFirstImg ? "disabled" : ""
         }`}
         disabled={isFirstImg}
-        onClick={() => props.handlePhotoChange(activeImgIndex - 1)}
+        onClick={() => handlePhotoChange(activeImgIndex - 1)}
       >
         &#8592;
       </button>
@@ -35,7 +35,7 @@ const PopUpControlPanel = props => {
           isLastImg ? "disabled" : ""
         }`}
         disabled={isLastImg}
-        onClick={() => props.handlePhotoChange(activeImgIndex + 1)}
+        onClick={() => handlePhotoChange(activeImgIndex + 1)}
       >
         &#8594;
       </button>
