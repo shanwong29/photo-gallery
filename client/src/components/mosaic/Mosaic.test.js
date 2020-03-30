@@ -1,34 +1,11 @@
 import React from "react";
 import Mosaic from "./Mosaic";
+import { mockGetPhotoResponse } from "../../service/__mocks__/mockGetPhotoResponse";
 import { shallow } from "enzyme";
 
 describe("Mosaic", () => {
   // *************************** Below: set up for each test   ****************************
-  const mockPhotoData = [
-    {
-      id: "1",
-      alt_description: "city buildings",
-      urls: {
-        raw: "https://abc/kjfds",
-        full: "https://fkjs/jsf//dsljf",
-        regular: "https://images.regular-tedt.jpg",
-        small: "https://images.small.jpg",
-        thumb: "https://images=entropy&cWQiOjExNDE3N30"
-      }
-    },
-    {
-      id: "2",
-      alt_description: "salt lake",
-      urls: {
-        raw: "https://gfsjffds",
-        full: "https://fJUHFd78f",
-        regular: "https://imasfkj87t.jpg",
-        small: "https://imagessfhdsl.jpg",
-        thumb: "https://image43093284ExNDE3N30"
-      }
-    }
-  ];
-
+  const mockPhotoData = mockGetPhotoResponse.results;
   const handlePhotoChange = jest.fn();
   const closePopUp = jest.fn();
   const randomActiveIndex = Math.floor(

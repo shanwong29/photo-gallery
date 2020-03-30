@@ -2,37 +2,14 @@ import React from "react";
 import ReactDOM from "react-dom";
 import { BrowserRouter } from "react-router-dom";
 import Carousel from "./Carousel";
+import { mockGetPhotoResponse } from "../../service/__mocks__/mockGetPhotoResponse";
 
 import { render, fireEvent } from "@testing-library/react";
 
 describe("Carousel Test", () => {
   // *****************************    Below: set up for each test    **********************************
 
-  const mockPhotoData = [
-    {
-      id: "1",
-      alt_description: "aerial photography of city buildings",
-      urls: {
-        raw: "https://abc.com/kjfds",
-        full: "https://fkjs.com/jsf//dsljf",
-        regular: "https://images.com/regular-tedt.jpg",
-        small: "https://images.small/jd.jpg",
-        thumb: "https://images.com//kjdshf/jks"
-      }
-    },
-    {
-      id: "2",
-      alt_description: "salt lake",
-      urls: {
-        raw: "https://gfsjffds.com/kdsafl",
-        full: "https://fJUHFd78f.com/jdsfhs",
-        regular: "https://imasfkj87t.com/jdaslk.jpg",
-        small: "https://imagessfhdsl.com/sjdf",
-        thumb: "https://image43093284ExNDE3N30.com/sjfjs"
-      }
-    }
-  ];
-
+  const mockPhotoData = mockGetPhotoResponse.results;
   const mockHandlePhotoChange = jest.fn();
   const randomImgIndex = Math.floor(Math.random() * mockPhotoData.length);
 
