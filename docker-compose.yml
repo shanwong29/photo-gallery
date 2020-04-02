@@ -1,0 +1,25 @@
+version: "3"
+services:
+  server:
+    container_name: photo-gallery-node
+    environment:
+      UNSPLASH_ACCESS_KEY: ${UNSPLASH_ACCESS_KEY}
+    restart: always
+    build: ./server
+    volumes:
+      - ./server/server.js:/usr/app/backend/server.js
+    ports:
+      - "5005:5005"
+  client:
+    container_name: photo-gallery-react
+    environment:
+      API_HOST: "${API_HOST:-http://server:5005}"
+    restart: always
+    build: ./client
+    ports:
+      - "3000:3000"
+    volumes:
+      - ./client/src:/usr/app/client/src
+      - ./client/public:/usr/app/client/public
+    links:
+      - server
