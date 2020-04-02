@@ -1,15 +1,11 @@
 {
-  "name": "photo-gallery",
-  "version": "1.0.0",
-  "description": "a photo gallery webpage",
+  "name": "photo-gallery--server",
   "main": "server.js",
   "scripts": {
     "start": "node server.js",
-    "server": "nodemon server.js",
-    "heroku-postbuild": "cd client && npm install && npm run build"
+    "server": "nodemon server.js"
   },
   "author": "Shan Wong",
-  "license": "ISC",
   "dependencies": {
     "axios": "^0.19.2",
     "body-parser": "^1.19.0",

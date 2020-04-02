@@ -1,0 +1,15 @@
+{
+  "name": "photo-gallery",
+  "version": "1.0.0",
+  "description": "a photo gallery webpage",
+  "scripts": {
+    "heroku-prebuild": "cd server && npm i",
+    "start": "node server/server.js",
+    "heroku-postbuild": "cd client && npm install && npm run build"
+  },
+  "author": "Shan Wong",
+  "license": "ISC",
+  "engines": {
+    "node": "12.13.0"
+  }
+}
