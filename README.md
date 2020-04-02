@@ -6,9 +6,7 @@ A photo gallery app to display 3 random sets of photos in two animated layouts: 
 The objective of this project are:
 
 1. to learn automated testing for react by using **Jest**, **Enzyme** and **React Testing Library**;
-
 2. to enhance my CSS skills by using more advanced front-end effects, **CSS grid, animation and transition**;
-
 3. to understand **Docker** & **Docker Compose** better by containerizing both the Node and the React app, and build a connection between them.
 
 The app has been deployed. You may see it on my [deployment page](https://shan-photo-gallery.herokuapp.com/).
@@ -22,20 +20,17 @@ The app has been deployed. You may see it on my [deployment page](https://shan-p
 ## Run Locally for Development
 
 1. Clone the repository:
-
 ```
 git clone https://github.com/shanwong29/photo-gallery.git
 
 ```
 
 2. Add your `Unsplash Access Key` as an environment variables:
-
 ```
 export UNSPLASH_ACCESS_KEY=<Your Unsplash Access Key>
 ```
 
 3. Build Docker images and run the Docker containers:
-
 ```
 cd photo-gallery/
 docker-compose build
@@ -50,7 +45,6 @@ Every edit in the local IDE will automatically be reflected in the apps running 
 ### Testing
 
 Once the Docker images are built, you may run the following command to test the React app:
-
 ```
 docker-compose run client npm test
 ```
