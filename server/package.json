@@ -1,10 +1,18 @@
 {
   "name": "photo-gallery--server",
   "main": "server.js",
+  "version": "1.0.0",
+  "description": "node server for photo gallery app",
   "scripts": {
     "start": "node server.js",
     "server": "nodemon server.js"
   },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/shanwong29/photo-gallery",
+    "directory": "/server"
+  },
+  "license": "ISC",
   "author": "Shan Wong",
   "dependencies": {
     "axios": "^0.19.2",

@@ -7,6 +7,10 @@
     "start": "node server/server.js",
     "heroku-postbuild": "cd client && npm install && npm run build"
   },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/shanwong29/photo-gallery"
+  },
   "author": "Shan Wong",
   "license": "ISC",
   "engines": {
