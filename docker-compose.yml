@@ -4,7 +4,6 @@ services:
     container_name: photo-gallery-node
     environment:
       UNSPLASH_ACCESS_KEY: ${UNSPLASH_ACCESS_KEY}
-    restart: always
     build: ./server
     volumes:
       - ./server/server.js:/usr/app/backend/server.js
@@ -14,7 +13,6 @@ services:
     container_name: photo-gallery-react
     environment:
       API_HOST: "${API_HOST:-http://server:5005}"
-    restart: always
     build: ./client
     ports:
       - "3000:3000"
