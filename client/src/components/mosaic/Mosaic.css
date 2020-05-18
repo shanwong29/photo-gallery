@@ -8,7 +8,6 @@
 
   width: 80vw;
   height: 80vh;
-  position: relative; /*for .mosaic__btn-wrapper*/
 }
 
 .mosaic__items {
@@ -29,7 +28,7 @@
   width: 80vw;
   height: 80vh;
   z-index: 1;
-  position: absolute;
+  position: absolute; /*relative to body*/
   transform: none; /*disable the hover scale effect*/
   box-shadow: 4px 4px 4px grey;
   cursor: default;

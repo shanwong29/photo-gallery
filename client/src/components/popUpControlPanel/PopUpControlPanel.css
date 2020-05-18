@@ -1,8 +1,8 @@
 .PopUpControlPanel {
   display: flex;
   flex-direction: column;
-  position: absolute; /*relative to .mosaic*/
-  left: 100%;
+  position: absolute; /*relative to body*/
+  left: 90vw;
   transform: translate(-50%, -50%);
   z-index: 2;
 }
@@ -21,18 +21,17 @@
   color: rgb(192, 207, 195);
   animation: btn-pop-in 250ms both; /*can use both or backwards*/
   animation-delay: 500ms; /*after the picture pop out*/
-  position: relative;
   z-index: 5;
 }
 .PopUpControlPanel__btn.left {
-  position: absolute;
+  position: absolute; /*relative to .PopUpControlPanel*/
   animation: btn-pop-in 1ms backwards, slide-down-1 500ms forwards;
   animation-delay: 750ms; /*after the close btn pop out*/
   z-index: 4;
 }
 
 .PopUpControlPanel__btn.right {
-  position: absolute;
+  position: absolute; /*relative to .PopUpControlPanel*/
   animation: btn-pop-in 1ms backwards, slide-down-2 1000ms forwards;
   animation-delay: 1000ms; /*after the left btn slide down */
   z-index: 3;
